@@ -151,4 +151,17 @@
                             
                     <!-- End Profile Widget -->
                     <!-- ======================================= -->
-                    
+                       
+                
+                
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            if (!localStorage.getItem('loggedIn')) {
+                                window.location.href = 'login.html'; // إعادة توجيه إلى صفحة تسجيل الدخول
+                            }
+                        });
+                    </script>
+                
+                
+                </body>
+</html>
