@@ -283,33 +283,32 @@
                     }
             
                     function deleteRow(button) {
-    var row = button.parentNode.parentNode;
-    row.parentNode.removeChild(row);
-
-    var tableBody = document.getElementById("tableBody");
-    var rows = tableBody.getElementsByTagName("tr");
-    var data = [];
-
-    for (var i = 0; i < rows.length; i++) {
-        var cells = rows[i].getElementsByTagName("td");
-        if (cells.length > 0) {
-            data.push({
-                name: cells[0].textContent,
-                age: cells[1].textContent,
-                birthdate: cells[2].textContent,
-                phone: cells[3].textContent,
-                jobNumber: cells[4].textContent,
-                email: cells[5].textContent,
-                gender: cells[6].textContent,
-                department: cells[7].textContent
-            });
-        }
-    }
-
-    localStorage.setItem('formData', JSON.stringify(data));
-    loadData();
-}
-
+                        var row = button.parentNode.parentNode;
+                        row.parentNode.removeChild(row);
+            
+                        var table = document.querySelector("table tbody");
+                        var rows = table.getElementsByTagName("tr");
+                        var data = [];
+            
+                        for (var i = 0; i < rows.length; i++) {
+                            var cells = rows[i].getElementsByTagName("td");
+                            if (cells.length > 0) {
+                                data.push({
+                                    name: cells[0].textContent,
+                                    age: cells[1].textContent,
+                                    birthdate: cells[2].textContent,
+                                    phone: cells[3].textContent,
+                                    jobNumber: cells[4].textContent,
+                                    email: cells[5].textContent,
+                                    gender: cells[6].textContent,
+                                    department: cells[7].textContent
+                                });
+                            }
+                        }
+            
+                        localStorage.setItem('formData', JSON.stringify(data));
+                        loadData();
+                    }
             
                     function loadData() {
                         var table = document.querySelector("table tbody");

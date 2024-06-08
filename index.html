@@ -1,5 +1,15 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!localStorage.getItem('loggedIn')) {
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+     
 <head>
 
     
@@ -89,9 +99,22 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+        if (!localStorage.getItem('loggedIn')) {
+            window.location.href = 'login.html'; // إعادة توجيه إلى صفحة تسجيل الدخول
+        }
+    });
+</script>
+
+
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
         loadData();
     });
-
+   
     function loadData() {
         var savedData = JSON.parse(localStorage.getItem('formData')) || [];
         var departmentCounts = {};
@@ -215,6 +238,7 @@
         });
     </script>
     
+   
 </body>
 </html>
 
