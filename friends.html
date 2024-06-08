@@ -76,8 +76,9 @@
             <div class="header flex">
                 <div class="search flex">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="search" placeholder="Type A Keyword">
+                    <input type="search" id="searchInput" placeholder="Type A Keyword" onkeyup="searchTable()">
                 </div>
+                
                 <div class="logo flex">
                     <i class="fa-regular fa-bell"></i>
                     <img src="images/avatar.png" alt="">
@@ -282,32 +283,33 @@
                     }
             
                     function deleteRow(button) {
-                        var row = button.parentNode.parentNode;
-                        row.parentNode.removeChild(row);
-            
-                        var table = document.querySelector("table tbody");
-                        var rows = table.getElementsByTagName("tr");
-                        var data = [];
-            
-                        for (var i = 0; i < rows.length; i++) {
-                            var cells = rows[i].getElementsByTagName("td");
-                            if (cells.length > 0) {
-                                data.push({
-                                    name: cells[0].textContent,
-                                    age: cells[1].textContent,
-                                    birthdate: cells[2].textContent,
-                                    phone: cells[3].textContent,
-                                    jobNumber: cells[4].textContent,
-                                    email: cells[5].textContent,
-                                    gender: cells[6].textContent,
-                                    department: cells[7].textContent
-                                });
-                            }
-                        }
-            
-                        localStorage.setItem('formData', JSON.stringify(data));
-                        loadData();
-                    }
+    var row = button.parentNode.parentNode;
+    row.parentNode.removeChild(row);
+
+    var tableBody = document.getElementById("tableBody");
+    var rows = tableBody.getElementsByTagName("tr");
+    var data = [];
+
+    for (var i = 0; i < rows.length; i++) {
+        var cells = rows[i].getElementsByTagName("td");
+        if (cells.length > 0) {
+            data.push({
+                name: cells[0].textContent,
+                age: cells[1].textContent,
+                birthdate: cells[2].textContent,
+                phone: cells[3].textContent,
+                jobNumber: cells[4].textContent,
+                email: cells[5].textContent,
+                gender: cells[6].textContent,
+                department: cells[7].textContent
+            });
+        }
+    }
+
+    localStorage.setItem('formData', JSON.stringify(data));
+    loadData();
+}
+
             
                     function loadData() {
                         var table = document.querySelector("table tbody");
@@ -338,6 +340,32 @@
                             cell9.innerHTML = '<button type="button" class="delete-btn" onclick="deleteRow(this)">حذف</button>';
                         });
                     }
+
+                    function searchTable() {
+    var input, filter, table, rows, cells, i, j;
+    input = document.getElementById("searchInput");
+    filter = input.value.toUpperCase();
+    table = document.querySelector("table");
+    rows = table.getElementsByTagName("tr");
+
+    for (i = 1; i < rows.length; i++) { // Start from 1 to skip the header row
+        cells = rows[i].getElementsByTagName("td");
+        var rowContainsKeyword = false;
+        for (j = 0; j < cells.length - 1; j++) { // Ignore the last cell which is the delete button
+            if (cells[j].textContent.toUpperCase().indexOf(filter) > -1) {
+                rowContainsKeyword = true;
+                break;
+            }
+        }
+        rows[i].style.display = rowContainsKeyword ? "" : "none";
+    }
+}
+
+
+
+
+
+
                 </script>
 </body>
 </html>
