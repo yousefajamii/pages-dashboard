@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AM | Friends</title>
+    <!-- Render All Element Normally -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- FontAwesone Library -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Framework -->
+    <link rel="stylesheet" href="css/framework.css">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Google Fonts "Open sans" -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Start Friends page [ sidebar + Friends ] -->
+    <div class="dashboard">
+<!-- =================================================== -->
+<!-- Start Side Bar -->
+        <div class="side-bar p-20">
+            <h3>Elzero</h3>
+            <ul>
+                <li><a href="index.html">
+                    <i class="fa-regular fa-chart-bar"></i>
+                    <span>Dashboard</span> 
+                    </a>
+                </li>
+                <li><a href="settings.html">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                    </a>
+                </li>
+                <li><a href="profile.html">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Profile</span>
+                    </a>
+                </li>
+                <li><a href="projects.html">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <span>Projects</span>
+                    </a>
+                </li>
+                <li><a href="courses.html">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Courses</span>
+                    </a>
+                </li>
+                <li><a href="friends.html" class="active">
+                    <i class="fa-regular fa-circle-user"></i>
+                    <span>Friends</span>
+                    </a>
+                </li>
+                <li><a href="files.html">
+                    <i class="fa-solid fa-file"></i>
+                    <span>Files</span>
+                    </a>
+                </li>
+                <li><a href="plan.html">
+                    <i class="fa-regular fa-credit-card"></i>
+                    <span>Plans</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+<!-- End Side Bar -->
+<!-- =================================================== -->
+<!-- Start Friends [the header + body] -->
+        <div class="main">
+            <!-- Start Header -->
+            <div class="header flex">
+                <div class="search flex">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" placeholder="Type A Keyword">
+                </div>
+                <div class="logo flex">
+                    <i class="fa-regular fa-bell"></i>
+                    <img src="images/avatar.png" alt="">
+                </div>
+            </div>
+            <!-- End Header -->
+            <!-- ======================================= -->
+            <!-- Start Content [section-heading + body]-->
+            <div class="content">
+                <!-- ======================================= -->
+                <!-- Start Friends body -->
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>إدخال البيانات</title>
+                <style>
+                    body {
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        background-color: #f4f4f9;
+                        margin: 0;
+                        padding: 20px;
+                    }
+                    h2 {
+                        color: #333;
+                    }
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        margin-top: 20px;
+                        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                        border-radius: 8px;
+                        overflow: hidden;
+                    }
+                    th, td {
+                        padding: 12px 15px;
+                        text-align: left;
+                        border-bottom: 1px solid #ddd;
+                    }
+                    th {
+                        background-color: #007bff;
+                        color: white;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                    }
+                    tr:nth-child(even) {
+                        background-color: #f9f9f9;
+                    }
+                    tr:hover {
+                        background-color: #f1f1f1;
+                    }
+                    td input, td select {
+                        width: 100%;
+                        padding: 8px;
+                        box-sizing: border-box;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                    }
+                    td button {
+                        padding: 8px 12px;
+                        border: none;
+                        border-radius: 4px;
+                        background-color: #28a745;
+                        color: white;
+                        cursor: pointer;
+                        font-size: 14px;
+                    }
+                    td button:hover {
+                        background-color: #218838;
+                    }
+                    .delete-btn {
+                        background-color: #dc3545;
+                    }
+                    .delete-btn:hover {
+                        background-color: #c82333;
+                    }
+                    .add-btn {
+                        margin-top: 20px;
+                        padding: 10px 20px;
+                        background-color: #007bff;
+                        color: white;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        font-size: 16px;
+                    }
+                    .add-btn:hover {
+                        background-color: #0056b3;
+                    }
+                </style>
+            </head>
+            <body>
+                <h2>إدخال البيانات</h2>
+                <form id="dataForm">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الاسم</th>
+                                <th>العمر</th>
+                                <th>تاريخ الميلاد</th>
+                                <th>رقم الجوال</th>
+                                <th>رقم الوظيفة</th>
+                                <th>الإيميل</th>
+                                <th>الجنس</th>
+                                <th>القسم الوظيفي</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- الصفوف سيتم إضافتها هنا -->
+                        </tbody>
+                    </table>
+                    <div class="form-inputs">
+                        <input type="text" name="name" placeholder="أدخل الاسم" required>
+                        <input type="date" name="birthdate" placeholder="أدخل تاريخ الميلاد" required onchange="calculateAge()">
+                        <input type="tel" name="phone" placeholder="أدخل رقم الجوال" required>
+                        <input type="text" name="jobNumber" placeholder="أدخل رقم الوظيفة" required>
+                        <input type="email" name="email" placeholder="أدخل الإيميل" required>
+                        <div class="gender-input">
+                            <label>الجنس:</label>
+                            <label><input type="radio" name="gender" value="ذكر" required> ذكر</label>
+                            <label><input type="radio" name="gender" value="أنثى" required> أنثى</label>
+                        </div>
+                        <div class="department-input">
+                            <label for="department">القسم الوظيفي:</label>
+                            <select name="department" id="department" required>
+                                <option value="IT">IT</option>
+                                <option value="HR">HR</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Sales">Sales</option>
+                            </select>
+                        </div>
+                        <button type="button" class="add-btn" onclick="addRow()">إضافة صف جديد</button>
+                    </div>
+                </form>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        loadData();
+                    });
+            
+                    function calculateAge(birthdate) {
+                        var birthdateDate = new Date(birthdate);
+                        var today = new Date();
+                        var age = today.getFullYear() - birthdateDate.getFullYear();
+                        var monthDifference = today.getMonth() - birthdateDate.getMonth();
+                        if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthdateDate.getDate())) {
+                            age--;
+                        }
+                        return age;
+                    }
+            
+                    function addRow() {
+                        var form = document.forms["dataForm"];
+                        var name = form["name"].value;
+                        var birthdate = form["birthdate"].value;
+                        var age = calculateAge(birthdate);
+                        var phone = form["phone"].value;
+                        var jobNumber = form["jobNumber"].value;
+                        var email = form["email"].value;
+                        var gender = form["gender"].value;
+                        var department = form["department"].value;
+            
+                        var table = document.querySelector("table tbody");
+                        var row = table.insertRow();
+            
+                        var cell1 = row.insertCell(0);
+                        var cell2 = row.insertCell(1);
+                        var cell3 = row.insertCell(2);
+                        var cell4 = row.insertCell(3);
+                        var cell5 = row.insertCell(4);
+                        var cell6 = row.insertCell(5);
+                        var cell7 = row.insertCell(6);
+                        var cell8 = row.insertCell(7);
+                        var cell9 = row.insertCell(8);
+            
+                        cell1.textContent = name;
+                        cell2.textContent = age;
+                        cell3.textContent = birthdate;
+                        cell4.textContent = phone;
+                        cell5.textContent = jobNumber;
+                        cell6.textContent = email;
+                        cell7.textContent = gender;
+                        cell8.textContent = department;
+                        cell9.innerHTML = '<button type="button" class="delete-btn" onclick="deleteRow(this)">حذف</button>';
+            
+                        var data = {
+                            name: name,
+                            age: age,
+                            birthdate: birthdate,
+                            phone: phone,
+                            jobNumber: jobNumber,
+                            email: email,
+                            gender: gender,
+                            department: department
+                        };
+            
+                        var existingData = JSON.parse(localStorage.getItem('formData')) || [];
+                        existingData.push(data);
+                        localStorage.setItem('formData', JSON.stringify(existingData));
+            
+                        form.reset();
+                        loadData();
+                    }
+            
+                    function deleteRow(button) {
+                        var row = button.parentNode.parentNode;
+                        row.parentNode.removeChild(row);
+            
+                        var table = document.querySelector("table tbody");
+                        var rows = table.getElementsByTagName("tr");
+                        var data = [];
+            
+                        for (var i = 0; i < rows.length; i++) {
+                            var cells = rows[i].getElementsByTagName("td");
+                            if (cells.length > 0) {
+                                data.push({
+                                    name: cells[0].textContent,
+                                    age: cells[1].textContent,
+                                    birthdate: cells[2].textContent,
+                                    phone: cells[3].textContent,
+                                    jobNumber: cells[4].textContent,
+                                    email: cells[5].textContent,
+                                    gender: cells[6].textContent,
+                                    department: cells[7].textContent
+                                });
+                            }
+                        }
+            
+                        localStorage.setItem('formData', JSON.stringify(data));
+                        loadData();
+                    }
+            
+                    function loadData() {
+                        var table = document.querySelector("table tbody");
+                        var savedData = JSON.parse(localStorage.getItem('formData')) || [];
+            
+                        table.innerHTML = '';
+            
+                        savedData.forEach(function(item) {
+                            var row = table.insertRow();
+                            var cell1 = row.insertCell(0);
+                            var cell2 = row.insertCell(1);
+                            var cell3 = row.insertCell(2);
+                            var cell4 = row.insertCell(3);
+                            var cell5 = row.insertCell(4);
+                            var cell6 = row.insertCell(5);
+                            var cell7 = row.insertCell(6);
+                            var cell8 = row.insertCell(7);
+                            var cell9 = row.insertCell(8);
+            
+                            cell1.textContent = item.name;
+                            cell2.textContent = item.age;
+                            cell3.textContent = item.birthdate;
+                            cell4.textContent = item.phone;
+                            cell5.textContent = item.jobNumber;
+                            cell6.textContent = item.email;
+                            cell7.textContent = item.gender;
+                            cell8.textContent = item.department;
+                            cell9.innerHTML = '<button type="button" class="delete-btn" onclick="deleteRow(this)">حذف</button>';
+                        });
+                    }
+                </script>
+</body>
+</html>
+

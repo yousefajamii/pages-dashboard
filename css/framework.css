@@ -1,0 +1,266 @@
+/* Start component */
+.d-flex {
+    display: flex;
+}
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-column {
+    flex-direction: column;
+}
+.done-item {
+    text-decoration: line-through;
+    opacity: 0.3
+}
+.disabled-item {
+    background-color: #f0f4f8;
+    color: #bbb;
+    cursor: not-allowed;
+}
+.btn-shape {
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+/* End component */
+/* ------------------------------- */
+/* Start My Framework */
+
+/* Start Display */
+.grid {
+    display: grid;
+}
+.d-block {
+    display: block;
+}
+.w-100 {
+    width: 100%;
+}
+.h-100 {
+    height: 100%;
+}
+/* End Display */
+/* ------------------------------- */
+/* Start Border */
+.r-6 {
+    border-radius: 6px;
+}
+.r-10 {
+    border-radius: 10px;
+}
+.b-n {
+    border: none;
+}
+.bb-eee {
+    border-bottom: 1px solid #eee;
+}
+.bt-eee {
+    border-top: 1px solid #eee;
+}
+/* End Border */
+/* ------------------------------- */
+/* Start Margin & Padding */
+.p-10 {
+    padding: 10px;
+}
+.p-20 {
+    padding: 20px;
+}
+.pt-10 {
+    padding-top: 10px;
+}
+.pt-15 {
+    padding-top: 15px;
+}
+.pt-20 {
+    padding-top: 20px;
+}
+.pr-30 {
+    padding-right: 30px;
+}
+.pb-10 {
+    padding-bottom: 10px;
+}
+.pb-15 {
+    padding-bottom: 15px;
+}
+.pb-20 {
+    padding-bottom: 20px;
+}
+.pb-30 {
+    padding-bottom: 30px;
+}
+.pl-30 {
+    padding-left: 30px;
+}
+.m-0 {
+    margin: 0;
+}
+.mt-10 {
+    margin-top: 10px;
+}
+.mt-15 {
+    margin-top: 15px;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+.mr-2 {
+    margin-right: 2px;
+}
+.mr-10 {
+    margin-right: 10px;
+}
+.mr-15 {
+    margin-right: 15px;
+}
+.mr-20 {
+    margin-right: 20px;
+}
+.mb-5 {
+    margin-bottom: 5px;
+}
+.mb-10 {
+    margin-bottom: 10px;
+}
+.mb-15 {
+    margin-bottom: 15px;
+}
+.mb-20 {
+    margin-bottom: 20px;
+}
+.mb-30 {
+    margin-bottom: 30px;
+}
+.ml-15 {
+    margin-left: 15px;
+}
+.ml-30 {
+    margin-left: 30px;
+}
+/* End Margin & Padding */
+/* --------------------------------------- */
+/* Start Fonts (Size & Weight) */
+.f-13 {
+    font-size: 13px;
+}
+.f-14 {
+    font-size: 14px;
+}
+.f-15 {
+    font-size: 15px;
+}
+.f-16 {
+    font-size: 16px;
+}
+.f-25 {
+    font-size: 25px;
+}
+.f-30 {
+    font-size: 30px;
+}
+.fw-n {
+    font-weight: normal;
+}
+.fw-500 {
+    font-weight: 500;
+}
+.fw-b {
+    font-weight: bold;
+}
+/* End Fonts (Size & Weight) */
+/* ---------------------------------------- */
+/* Start Colors */
+.c-gray {
+    color: gray;
+}
+.c-white {
+    color: white;
+}
+.c-black {
+    color: black;
+}
+.bg-eee {
+    background-color: #eee;
+}
+.bg-white {
+    background-color: white;
+}
+.clr-org {
+    color: #f59e0b;
+} 
+.bg-clr-org {
+    background-color: #f59e0b;
+}
+.clr-light-org {
+    color: #fdecce;
+} 
+.bg-clr-light-org {
+    background-color: #fdecce;
+}
+.clr-green {
+    color: #22c55e;
+} 
+.bg-clr-green {
+    background-color: #22c55e;
+}
+.clr-light-green {
+    color: #d3f3df;
+} 
+.bg-clr-light-green {
+    background-color: #d3f3df;
+}
+.clr-blue {
+    color: #0075ff;
+} 
+.bg-clr-blue {
+    background-color: #0075ff;
+}
+.clr-light-blue {
+    color: #cce3ff;
+} 
+.bg-clr-light-blue {
+    background-color: #cce3ff;
+}
+.clr-red {
+    color: #f44336;
+} 
+.bg-clr-red {
+    background-color: #f44336;
+} 
+.bg-clr-light-red {
+    background-color: #fdd9d7;
+}
+.bg-twitter {
+    background-color: #0075ff;
+}
+.bg-facebook {
+    background-color: #1877f2;
+}
+.bg-youtube {
+    background-color: #ff0000;
+}
+.bg-linkedin {
+    background-color: #0077b5;
+}
+.clr-twitter {
+    color: #0075ff;
+}
+.clr-facebook {
+    color: #1877f2;
+}
+.clr-youtube {
+    color: #ff0000;
+}
+.clr-linkedin {
+    color: #0077b5;
+}
+/* End Colors */
+/* End My Framework */
+

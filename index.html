@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AM | DashBoard</title>
+    <!-- Render All Element Normally -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- FontAwesome Library -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Framework -->
+    <link rel="stylesheet" href="css/framework.css">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Google Fonts "Open sans" -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Style for Charts */
+        .chart-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 900px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        #piechart, #myChart {
+            width: 100%;
+            height: 500px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Start DashBoard page -->
+    <div class="dashboard">
+        <!-- Start Side Bar -->
+        <div class="side-bar p-20">
+            <h3>Elzero</h3>
+            <ul>
+                <li><a href="index.html" class="active"><i class="fa-regular fa-chart-bar"></i><span>Dashboard</span></a></li>
+                <li><a href="profile.html"><i class="fa-regular fa-user"></i><span>Profile</span></a></li>
+                <li><a href="projects.html"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a></li>
+                <li><a href="courses.html"><i class="fa-solid fa-graduation-cap"></i><span>Courses</span></a></li>
+                <li><a href="friends.html"><i class="fa-regular fa-circle-user"></i><span>الموظفين</span></a></li>
+                <li><a href="files.html"><i class="fa-solid fa-file"></i><span>الملفات</span></a></li>
+                <li><a href="plan.html"><i class="fa-regular fa-credit-card"></i><span>Plans</span></a></li>
+            </ul>
+        </div>
+        <!-- End Side Bar -->
+
+        <!-- Start Main Dashboard -->
+        <div class="main">
+            <!-- Start Header -->
+            <div class="header flex">
+                <div class="search flex">
+                    
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" placeholder="Type A Keyword">
+                </div>
+                <div class="logo flex">
+                    <i class="fa-regular fa-bell"></i>
+                    <img src="images/avatar.png" alt="">
+                </div>
+            </div>
+            <!-- End Header -->
+
+            <!-- Start Content -->
+            <div class="content">
+                <h1 class="section-heading">Dashboard</h1>
+                <div class="wrapper">
+                   
+
+
+
+<!-- Start Charts -->
+<div class="chart-container">
+    <canvas id="myChart"></canvas>
+</div>
+<!-- End Charts -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        loadData();
+    });
+
+    function loadData() {
+        var savedData = JSON.parse(localStorage.getItem('formData')) || [];
+        var departmentCounts = {};
+
+        savedData.forEach(function(item) {
+            if (departmentCounts[item.department]) {
+                departmentCounts[item.department]++;
+            } else {
+                departmentCounts[item.department] = 1;
+            }
+        });
+
+        updateChart(departmentCounts);
+    }
+
+    var myChart;
+    function updateChart(departmentCounts) {
+        var labels = Object.keys(departmentCounts);
+        var data = Object.values(departmentCounts);
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        if (myChart) {
+            myChart.destroy(); // Destroy the previous chart if it exists
+        }
+        myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'عدد الموظفين',
+                    data: data,
+                    backgroundColor: ['red', 'green', 'blue', 'orange', 'brown'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'معدل الموظفين في الأقسام'
+                    }
+                }
+            }
+        });
+    }
+</script>
+
+
+
+                    <!-- Start Charts -->
+                    <div class="chart-container">
+                        <div id="piechart"></div>
+                    </div>
+                   
+                       
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+                        
+                    </div>
+                    
+                    <!-- End Charts -->
+                </div>
+            </div>
+            <!-- End Content -->
+        </div>
+        <!-- End Main Dashboard -->
+    </div>
+    <!-- End DashBoard page -->
+
+    <!-- Load Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var savedData = JSON.parse(localStorage.getItem('formData')) || [];
+            var maleCount = 0;
+            var femaleCount = 0;
+
+            savedData.forEach(function (item) {
+                if (item.gender === 'ذكر') {
+                    maleCount += 1;
+                } else if (item.gender === 'أنثى') {
+                    femaleCount += 1;
+                }
+            });
+
+            var dataTable = google.visualization.arrayToDataTable([
+                ['Gender', 'Number'],
+                ['ذكر', maleCount],
+                ['أنثى', femaleCount]
+            ]);
+
+            var options = {
+                title: 'عدد الذكور والإناث',
+                pieSliceText: 'percentage',
+                slices: {
+                    0: { offset: 0.05, color: '#4CAF50' },
+                    1: { offset: 0.05, color: '#E91E63' }
+                },
+                chartArea: { left: 50, top: 50, width: '80%', height: '80%' },
+                legend: { position: 'right', alignment: 'center', textStyle: { color: '#555', fontSize: 14 } },
+                backgroundColor: '#f9f9f9',
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(dataTable, options);
+        }
+    </script>
+
+    
+</body>
+</html>
+
